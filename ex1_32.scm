@@ -6,7 +6,9 @@
   (iter a null-value))
 
 (define (identity x) x)
+(define (square x) (* x x))
+
 
 (define (inc x) (+ x 1))
 
-(accumulate + 0 identity 0 inc 3)
+(accumulate + 0 square 0 inc 3)
