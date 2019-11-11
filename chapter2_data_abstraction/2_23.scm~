@@ -1,0 +1,8 @@
+
+(define (for-each items proc)
+  (cond ((null? (car items))
+	 #t)
+	(else
+	 (proc (car items))
+	 (for-each (cdr items) proc))))
+      
