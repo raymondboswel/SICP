@@ -13,6 +13,9 @@
 (define (branch-length branch)
   (car branch))
 
+(define (is-weighted? branch)
+  (not (pair? (car (cdr branch)))))
+
 (define x (list (list 1 2) (list 3 4)))
 
 (define (fringe tree)
@@ -29,4 +32,7 @@
 	(+ (car lst) (sum (cdr lst)))))
   (let ((weights (fringe mobile)))
     (sum weights)))
+
+(define (is-balanced? mobile)
+  (= (total-weight (left-branch mobile)) (total-weight (right-branch mobile))))
     
